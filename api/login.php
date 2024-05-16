@@ -3,8 +3,23 @@
     include("../config/utils.php");
     session_start();
 
-    // Connect to the database and acquire necessary data
-    $conn = connect();
+    header("Content-Type: application/json");
+
+    // Function for composing JSON responses
+    function compose_response($success, $msg, $rescode){
+        $res = [
+            "loginSuccess" => $success,
+            "message" => $msg,
+            "response_code" => $rescode
+        ];
+        return $res;
+    }
+
+    // Pass the response/code to emit if the connection fails
+    $failResponse = compose_response(false, "There was a server-side issue with your request", 500);
+    $conn = connect($failResponse);
+
+    // Acquire data and set required keys
     $data = json_decode(file_get_contents("php://input"), true);
     $keys = ["username", "password"];
 
@@ -21,7 +36,11 @@
     
     // Respond if the username is not found
     if (mysqli_num_rows($res) === 0){
-        echo "No account with the username {$username} exists.";
+        echo json_encode(compose_response(
+            false,
+            "No account with the username {$username} exists",
+            401
+        ));
         http_response_code(401);
         exit(1);
     }
@@ -30,12 +49,21 @@
     
     // Check if the correct password matches the provided one
     if ($row["Password"] != $password){
-        echo "The given username and password combination was incorrect.";
+        echo json_encode(compose_response(
+            false,
+            "The given username and password was incorrect",
+            401
+        ));
         http_response_code(401);
         exit(1);
     }
 
-    echo "Login successful";
+    // Login was successful, emit response and set session variables
+    echo json_encode(compose_response(
+        true,
+        "Login successful",
+        200
+    ));
     http_response_code(200);
 
     // Set session variables
