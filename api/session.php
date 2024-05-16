@@ -1,6 +1,6 @@
 <?php 
     session_start();
-
+    
     header("Content-Type: application/json");
 
     function compose_response($sessionActive, $fname, $lname, $user, $uid, $rescode){

@@ -32,7 +32,7 @@
     $password = $data["password"];
 
     // Query to see if the username is already taken
-    $q = "SELECT * FROM users WHERE username = '{$username}'";
+    $q = "SELECT * FROM Users WHERE username = '{$username}'";
     $res = mysqli_query($conn, $q);
     // Deny the request if the username is taken
     if (mysqli_num_rows($res) !== 0){
@@ -46,7 +46,7 @@
     }
 
     // Insert the new registered user into the database
-    $q = "INSERT INTO users (firstname, lastname, username, password)
+    $q = "INSERT INTO Users (firstname, lastname, username, password)
     VALUES ('{$firstname}', '{$lastname}', '{$username}', '{$password}')";
     mysqli_query($conn, $q);
     mysqli_close($conn);
