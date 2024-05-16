@@ -3,6 +3,18 @@
     include("../config/utils.php");
     session_start();
 
+    header("Content-Type: application/json");
+
+    // Function for forming registration response
+    function compose_response($ac, $msg, $rescode){
+        $res = [
+            "accountCreated" => $ac, // boolean
+            "message" => $msg, // string containing success or reason for failure
+            "response_code" => $rescode // http response code
+        ];
+        return json_encode($res);
+    }
+
     // Connect to the database and acquire necessary data
     $conn = connect();
     $data = json_decode(file_get_contents("php://input"), true);
@@ -21,7 +33,11 @@
     $res = mysqli_query($conn, $q);
     // Deny the request if the username is taken
     if (mysqli_num_rows($res) !== 0){
-        echo "The requested username is not available";
+        echo compose_response(
+            false,
+            "The requested username is not available",
+            400
+        );
         http_response_code(400);
         exit(1);
     }
@@ -32,6 +48,10 @@
     mysqli_query($conn, $q);
     mysqli_close($conn);
 
-    echo "Registration successful";
+    echo compose_response(
+        true,
+        "Registration successful",
+        200
+    );
     http_response_code(200);
 ?>
