@@ -1,6 +1,4 @@
 <?php
-    // Global variable for base url. Will be changed when uploaded to DigitalOcean
-    $GLOBALS['BASEURL'] = "localhost/website";
     // Checks if all keys in $keys are present in the associative array $array
     function all_keys_exist($keys, $array){
         $all_exist = 1;

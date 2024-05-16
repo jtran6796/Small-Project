@@ -30,7 +30,7 @@
     $password = $data["password"];
 
     // Check if the provided username exists
-    $q = "SELECT * FROM users WHERE username = '{$username}'";
+    $q = "SELECT * FROM Users WHERE username = '{$username}'";
     $res = mysqli_query($conn, $q);
     mysqli_close($conn);
     
