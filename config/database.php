@@ -19,7 +19,7 @@
         }
         catch(mysqli_sql_exception){
             echo json_encode($failResponse);
-            http_response_code($failResponse["response_code"]);
+            http_response_code($failResponse["responseCode"]);
             exit(1);
         }
         return $conn;

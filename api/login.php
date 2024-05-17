@@ -10,7 +10,7 @@
         $res = [
             "loginSuccess" => $success,
             "message" => $msg,
-            "response_code" => $rescode
+            "responseCode" => $rescode
         ];
         return $res;
     }
