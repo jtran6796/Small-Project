@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Manager - Registration</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://colorhunt.co/palette/182747562b08647e68d8d8d8">
     <style>
         body {
             background-color: #ad8b73; 
@@ -30,7 +29,7 @@
             color: #562B08; 
         }
         .login-link {
-            color: blue;
+            color: black;
             text-decoration: underline;
         }
     </style>
@@ -38,7 +37,7 @@
 <body>
 
 <div class="container mt-5">
-    <h1 class="text-center mb-4 register-header">Register</h1>
+    <h1 class="text-center mb-4 register-header">Sign up</h1>
     <form id="registrationForm">
         <div class="form-group">
             <label for="firstName">First Name</label>
@@ -56,7 +55,9 @@
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" required>
         </div>
-        <button type="submit" class="btn btn-primary">Register</button>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
         <div class="text-center mt-3">
             <a href="login.html" class="login-link">Have an account? Login</a>
         </div>
