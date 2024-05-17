@@ -10,7 +10,7 @@
         $res = [
             "accountCreated" => $ac, // boolean
             "message" => $msg, // string containing success or reason for failure
-            "response_code" => $rescode // http response code
+            "responseCode" => $rescode // http response code
         ];
         return $res;
     }
@@ -21,13 +21,13 @@
 
     // Acquire necessary data
     $data = json_decode(file_get_contents("php://input"), true);
-    $keys = ["firstname", "lastname", "username", "password"];
+    $keys = ["firstName", "lastName", "username", "password"];
 
     // Check if the required data is present
     check_required_values($keys, $data);
     // Create local variable copies
-    $firstname = $data["firstname"];
-    $lastname = $data["lastname"];
+    $firstname = $data["firstName"];
+    $lastname = $data["lastName"];
     $username = $data["username"];
     $password = $data["password"];
 

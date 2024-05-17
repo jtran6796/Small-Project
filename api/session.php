@@ -6,11 +6,11 @@
     function compose_response($sessionActive, $fname, $lname, $user, $uid, $rescode){
         $res = [
             "sessionActive" => $sessionActive,
-            "firstname" => $fname,
-            "lastname" => $lname,
+            "firstName" => $fname,
+            "lastName" => $lname,
             "username" => $user,
-            "userid" => $uid,
-            "response_code" => $rescode
+            "userId" => $uid,
+            "responseCode" => $rescode
         ];
         return $res;
     }
