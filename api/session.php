@@ -25,7 +25,7 @@
     else{
         echo json_encode(compose_response(
             true, $_SESSION["firstname"], $_SESSION["lastname"], $_SESSION["username"], 
-            $_SESSION["userid"], 200
+            intval($_SESSION["userid"]), 200
         ));
         http_response_code(200);
     }
