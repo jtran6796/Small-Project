@@ -48,7 +48,7 @@
     $row = mysqli_fetch_assoc($res);
     
     // Check if the correct password matches the provided one
-    if ($row["Password"] != $password){
+    if ($row["password"] != $password){
         echo json_encode(compose_response(
             false,
             "The given username and password was incorrect",
@@ -67,8 +67,8 @@
     http_response_code(200);
 
     // Set session variables
-    $_SESSION["firstname"] = $row["FirstName"];
-    $_SESSION["lastname"] = $row["LastName"];
-    $_SESSION["username"] = $row["Username"];
-    $_SESSION["userid"] = $row["UserId"];
+    $_SESSION["firstname"] = $row["firstName"];
+    $_SESSION["lastname"] = $row["lastName"];
+    $_SESSION["username"] = $row["username"];
+    $_SESSION["userid"] = $row["userId"];
 ?>
