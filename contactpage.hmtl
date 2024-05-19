@@ -29,16 +29,19 @@
             .form-group label {
                 color: #562B08; 
             }
-            .login-link {
-                color: blue;
-                text-decoration: underline;
-            }
             
         </style>
     
     </head>
     <body>
-        <div class="d-flex justify-content-center">
-          <input type="text" placeholder="Search..">
-          <button type="submit"><i class="fa fa-search"></i></button>
+            <form>
+                <div class="d-flex justify-content-center">
+                    <form action="/search_results">
+                        <input type="text" name="query" placeholder="Search...">
+                        <button type="submit">search</button>
+                  
+            </form>
+
+
+                    
         </div>
