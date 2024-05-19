@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts - ContactsPage </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://colorhunt.co/palette/182747562b08647e68d8d8d8">
+        <style>
+            body {
+                background-color: #ad8b73; 
+            }
+            .container {
+                background-color: #ceab93;
+                border-radius: 10px;
+                padding: 20px;
+            }
+            .btn-primary {
+                background-color: #562B08; 
+                border-color: #e3caa5; 
+            }
+            .btn-primary:hover {
+                background-color: #fffbe9; 
+                border-color: #fffbe9; 
+            }
+            .register-header {
+                color: #562B08; 
+            }
+            .form-group label {
+                color: #562B08; 
+            }
+            .login-link {
+                color: blue;
+                text-decoration: underline;
+            }
+            
+        </style>
+    
+    </head>
+    <body>
+        <div class="d-flex justify-content-center">
+          <input type="text" placeholder="Search..">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
